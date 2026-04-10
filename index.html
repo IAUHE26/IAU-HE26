@@ -1,597 +1,577 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>معرض قسم تطوير الذات 2026 - جامعة الإمام عبدالرحمن بن فيصل</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --teal: #14b8a6;
-    --cyan: #06b6d4;
-    --navy: #1e3a8a;
-    --navy-light: #2d55c7;
-    --white: #ffffff;
-    --off-white: #f0f9ff;
-    --gray-50: #f8fafc;
-    --gray-100: #e2f4f8;
-    --gray-300: #94a3b8;
-    --gray-600: #475569;
-    --gray-800: #1e293b;
-    --font-display: 'Cairo', 'Tajawal', sans-serif;
-    --font-body: 'Tajawal', 'Cairo', sans-serif;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: var(--font-body);
-    background: var(--white);
-    color: var(--gray-800);
-    direction: rtl;
-    text-align: right;
-    overflow-x: hidden;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض قسم تطوير الذات | جامعة الإمام عبدالرحمن بن فيصل</title>
 
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    background: linear-gradient(160deg, #ffffff 0%, #f0f9ff 40%, #e0f7fa 100%);
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    padding: 60px 24px 80px;
-    position: relative; overflow: hidden;
-  }
-  .hero::before {
-    content: ''; position: absolute;
-    width: 500px; height: 500px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(6,182,212,0.12) 0%, transparent 70%);
-    top: -100px; left: -150px; pointer-events: none;
-  }
-  .hero::after {
-    content: ''; position: absolute;
-    width: 400px; height: 400px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(20,184,166,0.1) 0%, transparent 70%);
-    bottom: -80px; right: -100px; pointer-events: none;
-  }
-  .deco-cross {
-    position: absolute; opacity: 0.06; font-size: 80px;
-    color: var(--navy); pointer-events: none;
-    animation: floatY 6s ease-in-out infinite;
-  }
-  .deco-cross:nth-child(1) { top: 10%; right: 8%; font-size: 60px; animation-delay: 0s; }
-  .deco-cross:nth-child(2) { top: 25%; left: 6%; font-size: 100px; animation-delay: 2s; }
-  .deco-cross:nth-child(3) { bottom: 20%; right: 12%; font-size: 50px; animation-delay: 4s; }
-  .deco-cross:nth-child(4) { bottom: 30%; left: 10%; font-size: 70px; animation-delay: 1s; }
-  @keyframes floatY {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-14px); }
-  }
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 
-  /* Logo */
-  .logo-wrap { width: 100%; display: flex; justify-content: center; margin-bottom: 36px; animation: fadeDown 0.8s ease both; }
-  .logo-badge { display: flex; flex-direction: column; align-items: center; }
-  .logo-img {
-    width: 320px; height: auto;
-    filter: drop-shadow(0 4px 16px rgba(30,58,138,0.10));
-    animation: fadeDown 0.8s ease both;
-  }
+    <style>
+        /* ===== Reset & Base ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  .hero-eyebrow {
-    font-family: var(--font-body); font-size: 13px; font-weight: 500;
-    letter-spacing: 0.18em; color: var(--teal); text-transform: uppercase;
-    margin-bottom: 14px; animation: fadeDown 0.8s 0.15s ease both;
-  }
-  .hero-title {
-    font-family: var(--font-display); font-size: clamp(32px, 6vw, 60px);
-    font-weight: 900; color: var(--navy); text-align: center;
-    line-height: 1.25; margin-bottom: 16px; animation: fadeDown 0.8s 0.25s ease both;
-  }
-  .hero-title .accent { color: var(--teal); }
-  .hero-sub {
-    font-size: clamp(15px, 2.5vw, 18px); color: var(--gray-600);
-    text-align: center; max-width: 560px; line-height: 1.9; margin-bottom: 50px;
-    font-weight: 400; animation: fadeDown 0.8s 0.35s ease both;
-  }
-  .hero-sub strong { color: var(--navy); font-weight: 700; }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            direction: rtl;
+            background: #f5f9f9;
+            color: #333;
+            overflow-x: hidden;
+        }
 
-  /* Countdown */
-  .countdown-wrap { animation: fadeDown 0.8s 0.45s ease both; width: 100%; max-width: 700px; }
-  .countdown-label {
-    text-align: center; font-size: 13px; font-weight: 600;
-    color: var(--gray-300); letter-spacing: 0.1em; margin-bottom: 20px; text-transform: uppercase;
-  }
-  .countdown-grid { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-  .cd-card {
-    background: var(--white); border: 1.5px solid rgba(20,184,166,0.18);
-    border-radius: 20px; padding: 22px 18px 16px;
-    min-width: 120px; flex: 1; max-width: 150px; text-align: center;
-    box-shadow: 0 4px 24px rgba(30,58,138,0.07), 0 1px 4px rgba(0,0,0,0.04);
-    position: relative; overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .cd-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(30,58,138,0.12); }
-  .cd-card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, var(--teal), var(--cyan));
-  }
-  .cd-num {
-    font-family: var(--font-display); font-size: clamp(36px, 5vw, 52px);
-    font-weight: 900;
-    background: linear-gradient(135deg, var(--navy), var(--navy-light));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    line-height: 1; display: block; font-feature-settings: "tnum";
-  }
-  .cd-unit { font-size: 13px; font-weight: 600; color: var(--teal); margin-top: 8px; display: block; letter-spacing: 0.04em; }
-  .cd-sep {
-    font-family: var(--font-display); font-size: 40px; font-weight: 900;
-    color: var(--gray-100); display: flex; align-items: center; padding-top: 8px; user-select: none;
-  }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-  .date-badge {
-    margin-top: 32px; display: inline-flex; align-items: center; gap: 10px;
-    background: linear-gradient(90deg, var(--navy), var(--navy-light));
-    color: white; border-radius: 50px; padding: 10px 24px;
-    font-family: var(--font-display); font-weight: 600; font-size: 15px;
-    box-shadow: 0 4px 20px rgba(30,58,138,0.25);
-    animation: fadeDown 0.8s 0.55s ease both;
-  }
-  .date-badge .dot { width: 8px; height: 8px; background: var(--teal); border-radius: 50%; animation: pulse 1.5s ease-in-out infinite; }
-  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(1.3)} }
+        /* ===== Hero Section ===== */
+        .hero {
+            background: linear-gradient(145deg, #074b4e 0%, #0a6d70 40%, #0e8e91 70%, #12a8ab 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
 
-  /* ── SECTIONS ── */
-  .section { padding: 90px 24px; }
-  .section-inner { max-width: 1100px; margin: 0 auto; }
-  .section-tag {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(20,184,166,0.08); color: var(--teal); border-radius: 50px;
-    padding: 6px 16px; font-size: 13px; font-weight: 700; margin-bottom: 18px; letter-spacing: 0.05em;
-  }
-  .section-title {
-    font-family: var(--font-display); font-size: clamp(26px, 4vw, 40px);
-    font-weight: 900; color: var(--navy); margin-bottom: 20px; line-height: 1.3;
-  }
-  .section-desc { font-size: 17px; color: var(--gray-600); line-height: 2; max-width: 740px; font-weight: 400; }
+        /* Decorative Plus Signs */
+        .plus {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.07);
+            font-weight: 900;
+            font-size: 120px;
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+        }
+        .plus-1 { top: 8%; right: 5%; font-size: 100px; }
+        .plus-2 { bottom: 20%; left: 3%; font-size: 140px; }
+        .plus-3 { top: 35%; left: 10%; font-size: 60px; color: rgba(255,255,255,0.04); }
+        .plus-4 { bottom: 40%; right: 8%; font-size: 80px; color: rgba(255,255,255,0.05); }
+        .plus-5 { top: 60%; left: 20%; font-size: 50px; color: rgba(255,255,255,0.03); }
 
-  .info-card-link {
-    text-decoration: none;
-    cursor: pointer;
-  }
-  .info-card-link:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(20,184,166,0.18);
-    border-color: rgba(20,184,166,0.4);
-  }
-  .details-bg { background: var(--gray-50); }
-  .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 52px; }
-  .info-card {
-    background: var(--white); border-radius: 20px; padding: 28px;
-    border: 1px solid rgba(20,184,166,0.12);
-    box-shadow: 0 2px 16px rgba(30,58,138,0.06);
-    display: flex; gap: 18px; align-items: flex-start;
-    transition: transform 0.25s, box-shadow 0.25s;
-  }
-  .info-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(30,58,138,0.12); }
-  .info-icon {
-    width: 52px; height: 52px; min-width: 52px;
-    border-radius: 14px;
-    background: linear-gradient(135deg, rgba(20,184,166,0.12), rgba(6,182,212,0.12));
-    display: flex; align-items: center; justify-content: center; font-size: 24px;
-  }
-  .info-label { font-size: 12px; font-weight: 700; color: var(--gray-300); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
-  .info-value { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--navy); line-height: 1.4; }
-  .info-sub { font-size: 13px; color: var(--gray-300); margin-top: 4px; font-weight: 400; }
+        /* Logo Container */
+        .logo-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            padding: 35px 40px;
+            margin-bottom: 35px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+            max-width: 520px;
+            width: 90%;
+            position: relative;
+            z-index: 2;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
 
-  /* ── PAVILIONS ── */
-  .pavilions-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-    margin-top: 48px;
-  }
-  .pavilion-card {
-    background: var(--white);
-    border-radius: 18px;
-    padding: 28px 22px;
-    border: 1.5px solid rgba(20,184,166,0.13);
-    box-shadow: 0 2px 14px rgba(30,58,138,0.07);
-    display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
-    transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
-    position: relative; overflow: hidden;
-  }
-  .pavilion-card::before {
-    content: ''; position: absolute; top: 0; right: 0; left: 0; height: 3px;
-    background: linear-gradient(90deg, var(--teal), var(--cyan));
-    transform: scaleX(0); transform-origin: right;
-    transition: transform 0.3s ease;
-  }
-  .pavilion-card:hover::before { transform: scaleX(1); }
-  .pavilion-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(30,58,138,0.13); border-color: rgba(20,184,166,0.3); }
+        /* ✅ إصلاح الشعار على الجوال */
+        .logo-container img {
+            max-width: 100% !important;
+            height: auto !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            margin: 0 auto;
+            width: 100%;
+        }
 
-  /* ── FEATURED PAVILION (first card) ── */
-  .pavilion-card.featured {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-    border-color: transparent;
-    box-shadow: 0 8px 32px rgba(30,58,138,0.28);
-  }
-  .pavilion-card.featured::before {
-    background: linear-gradient(90deg, var(--teal), var(--cyan));
-    transform: scaleX(1);
-  }
-  .pavilion-card.featured .pv-icon {
-    background: rgba(255,255,255,0.15);
-  }
-  .pavilion-card.featured .pv-title { color: white; font-size: 17px; }
-  .pavilion-card.featured .pv-desc { color: rgba(255,255,255,0.8); }
-  .pavilion-card.featured:hover { transform: translateY(-6px); box-shadow: 0 18px 48px rgba(30,58,138,0.38); }
+        /* Hero Text */
+        .hero-location {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: 400;
+            position: relative;
+            z-index: 2;
+        }
 
-  .pv-icon {
-    width: 52px; height: 52px;
-    border-radius: 14px;
-    background: linear-gradient(135deg, rgba(20,184,166,0.12), rgba(6,182,212,0.14));
-    display: flex; align-items: center; justify-content: center;
-    font-size: 26px;
-  }
-  .pv-title { font-family: var(--font-display); font-size: 16px; font-weight: 800; color: var(--navy); line-height: 1.4; }
-  .pv-desc { font-size: 13px; color: var(--gray-600); line-height: 1.8; font-weight: 400; }
+        .hero-title {
+            color: #ffffff;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-  /* ── CLOSING BANNER ── */
-  .closing-banner {
-    padding: 80px 24px;
-    background: linear-gradient(160deg, #f0f9ff 0%, #e0f7fa 100%);
-    display: flex; align-items: center; justify-content: center;
-    position: relative; overflow: hidden;
-  }
-  .closing-banner::before {
-    content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse at center, rgba(20,184,166,0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .closing-text {
-    font-family: var(--font-display);
-    font-size: clamp(36px, 7vw, 72px);
-    font-weight: 900;
-    color: var(--navy);
-    text-align: center;
-    line-height: 1.2;
-    position: relative;
-    letter-spacing: -0.01em;
-  }
-  .closing-text .highlight {
-    background: linear-gradient(135deg, var(--navy), var(--navy-light));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    display: block;
-  }
+        .hero-tagline {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+        }
 
-  /* ── FOOTER ── */
-  footer {
-    background: var(--navy); color: rgba(255,255,255,0.7);
-    text-align: center; padding: 40px 24px; font-size: 14px; line-height: 2;
-  }
-  footer strong { color: white; }
-  .footer-divider {
-    width: 60px; height: 2px;
-    background: linear-gradient(90deg, var(--teal), var(--cyan));
-    margin: 0 auto 20px; border-radius: 2px;
-  }
+        .hero-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto 20px;
+            line-height: 2;
+            position: relative;
+            z-index: 2;
+        }
 
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-18px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .divider-line {
-    width: 100%; height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(20,184,166,0.3), transparent);
-  }
+        .hero-keywords {
+            color: #ffffff;
+            font-size: 1.05rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+        }
 
-  @media (max-width: 768px) {
-    .details-grid { grid-template-columns: 1fr; }
-    .pavilions-grid { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 480px) {
-    .pavilions-grid { grid-template-columns: 1fr; }
-    .cd-card { min-width: 70px; max-width: 80px; padding: 16px 8px 12px; }
-    .cd-sep { display: none; }
-    .countdown-grid { gap: 8px; }
-    .closing-text { font-size: clamp(28px, 8vw, 48px); }
-  }
-</style>
+        .hero-keywords span {
+            margin: 0 5px;
+        }
+
+        .keyword-dot {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ===== Info Section (Date & Location) ===== */
+        .info-section {
+            background: linear-gradient(180deg, #edf5f5 0%, #f5f9f9 100%);
+            padding: 70px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #0a6d70;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 40px;
+        }
+
+        .info-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .info-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card-label {
+            color: #0a6d70;
+            font-size: 1rem;
+            margin-bottom: 18px;
+            font-weight: 500;
+        }
+
+        .info-card-icon {
+            margin-bottom: 18px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .info-card-main {
+            color: #1a3a4a;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .info-card-sub {
+            color: #888;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        /* ✅ أيقونة التقويم المخصصة (بدل الإيموجي) */
+        .calendar-icon {
+            width: 72px;
+            height: 72px;
+            background: #e8f4f4;
+            border-radius: 18px;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .calendar-icon .cal-month {
+            background: #C0392B;
+            color: #ffffff;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 800;
+            padding: 6px 0;
+            font-family: 'Arial', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .calendar-icon .cal-day {
+            color: #2C3E50;
+            font-size: 28px;
+            font-weight: 900;
+            padding-top: 7px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Location Icon */
+        .location-icon {
+            width: 72px;
+            height: 72px;
+            background: #e8f4f4;
+            border-radius: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        /* ===== Topics Section ===== */
+        .topics-section {
+            padding: 70px 20px;
+            background: #ffffff;
+        }
+
+        .topics-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .topic-card {
+            background: linear-gradient(135deg, #f0fafa 0%, #e8f4f4 100%);
+            border-radius: 20px;
+            padding: 35px 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(10, 109, 112, 0.08);
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(10, 109, 112, 0.12);
+        }
+
+        .topic-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .topic-title {
+            color: #0a6d70;
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .topic-desc {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* ===== CTA Section ===== */
+        .cta-section {
+            background: linear-gradient(145deg, #074b4e 0%, #0a6d70 50%, #0e8e91 100%);
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .cta-title {
+            color: #ffffff;
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+
+        .cta-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: #ffffff;
+            color: #0a6d70;
+            padding: 16px 50px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            font-family: 'Tajawal', sans-serif;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: #063a3c;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        .footer .heart {
+            color: #e74c3c;
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 15px;
+                min-height: auto;
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .hero-keywords {
+                font-size: 0.95rem;
+            }
+
+            .logo-container {
+                padding: 20px 25px;
+                width: 92%;
+                max-width: 400px;
+            }
+
+            /* ✅ تأكد الشعار يظهر على الجوال */
+            .logo-container img {
+                max-width: 100% !important;
+                height: auto !important;
+                display: block !important;
+                visibility: visible !important;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .topics-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .info-card {
+                padding: 30px 20px;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .cta-title {
+                font-size: 1.7rem;
+            }
+
+            .plus {
+                font-size: 60px;
+            }
+            .plus-1 { font-size: 50px; }
+            .plus-2 { font-size: 70px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.7rem;
+            }
+
+            .logo-container {
+                padding: 15px 20px;
+            }
+
+            .info-card-main {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* ===== Animations ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.3s; }
+        .delay-3 { animation-delay: 0.5s; }
+        .delay-4 { animation-delay: 0.7s; }
+    </style>
 </head>
 <body>
 
-<!-- ══════════ HERO ══════════ -->
-<section class="hero">
-  <span class="deco-cross">✚</span>
-  <span class="deco-cross">✚</span>
-  <span class="deco-cross">✚</span>
-  <span class="deco-cross">✚</span>
+    <!-- ===================== Hero Section ===================== -->
+    <section class="hero">
 
-  <div class="logo-wrap">
-    <div class="logo-badge">
-      <img class="logo-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAg4AAAFRCAYAAAAciyWGAAEAAElEQVR4nOz915ccR57vCX7MzN0jIgW0FgQIDUIQLJJVLK2rWvft7pk799zZmZ19mafdP2TP2bNP+zIPc3Zn5k6fe2+rqq4ussgqagVCayCRCaTWmRGRGdrdzX77YB4JoEgWBAXIon/OYaGQSGSYewTcfvYT3y/k5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5HxlUY97ATk5OV8Obo5OS7lcxcYJvb39nDj6ZP78yMn5CqIf9wJycnK+HMwtVBgcGmZg8Daz8wvcvD0tj3tNOTk5nz/B415ATk7OF5cbYwvSaHWoVquMT81TrtRwzrEutojKHx85OV9F8n/5OTk5H8vUbJWZmRnK5TJxHNNpJwRBgApCDj65MS9V5OR8BckDh5ycnA/xwdVJqVabTM2UmZ9fol5voZQCpwlNQLHQ+7iXmJOT85jIA4ecnJx7+ODSqAyPjDMzW0UpTacjaBOhtUK0Jir2EBaix73MnJycx0QeOOTk5ABwY3hayksNJmbmWCgvU6u3sAJGh0RhEaUtOtCUCiHgHvdyc3JyHhN54JCTk8OZm5NyfWSa6Zl5lmstUmfQxR4ksTgRwqiI2A5RYFm/bjX9PeHjXnJOTs5jIg8ccnK+wpy5MSVLzTbDY7MsVJdodFKsMjhtUCi0CbFJSpqmGAU9PT2sXdVPqZgHDjk5X1XywCEn5yvK0ERFTp69RK3VodFo0E4toFE6RCmFOCEwAc4mJGkHZWBV/zo2bNjA0b35REVOzleVPHDIyfkYrg5MSKPRoN5sUas1WFqqUavVQBk2btzE1i3r+e43Dn/pNtAbI/NSqVS4ePUGi4tlWokjThKc0gQmQCmFQiEIOpOIS9MUAxSLEcf25UFDTs5XmTxwyMn5CK4OTsvUzCwDN24xMzPLxPgUM3PzlBeXCYKAgwcPcfzYIc5eHpZnj315pJcv3pyVoZFJpqamWFgsExZ6QTRBEOHQaK0RpxAlgEJE0FphE4sSCE0uNpuT81UnDxxyvtJcvjkmlaUq5XKVcrnM0nKNOE75p1/8mka9yXKjTaW8RKW8zNJSh6XlmNS1iEqzBFGRvv4iH5wdkG88e/ALHTxcHpyRejthZGya6fkFmq0UE/XhRKO0xgBKgUMQJwhZ4IBDKcEEijCCMDSP+1JycnIeM3ngkPOV5drAjNy4dZvJmWmGh0cZHh5mbHScVqtDGPUQRUW0MihlUISkBATZpMFCuU77ygA2aVJbWuL9s4PyzWf3fyGDh2vDZZmcnmNmYZGFhSqNdgejA1RQQFILgu9pAEAhGhQKlCBiCTRgDKWCoVTM9Rtycr7q5IFDzh81F6/ckupSjWqlxlK9RruVAtBud/jHf3mRWrtNeXmJpfISc4t1FstNlusNisWUnl7BpZZCqYfQWFIrCIqoUEJEqCzVGJ+cwdkOvf3+ub/fuTYuz8d9LMr5Q3gFCuuRYe6PjJFHBJL4kJJfvXcZQQ4lhxnFVh+N4/vTbHIqUAGLALvs1cUkQJqT3oiS1IhAtHb1GlzgwcuVXTQEgECBDg8Vl4ssCBe2MWf3RVD6l40eSeH0wR+cABjOmfAv9JiA/9/gSAKfhbGSDAAAAAElFTkSuQmCC" alt="شعار جامعة الإمام عبدالرحمن بن فيصل - عمادة السنة التحضيرية">
-    </div>
-  </div>
+        <!-- Decorative Plus Signs -->
+        <span class="plus plus-1">+</span>
+        <span class="plus plus-2">+</span>
+        <span class="plus plus-3">+</span>
+        <span class="plus plus-4">+</span>
+        <span class="plus plus-5">+</span>
 
-  <p class="hero-eyebrow">١٩ مايو ٢٠٢٦ · الدمام، المملكة العربية السعودية</p>
-  <h1 class="hero-title">معرض قسم <span class="accent">تطوير الذات</span></h1>
-
-  <p class="hero-sub">
-    هل أنت مستعد؟ 🎯<br>
-    ستشهد إبداع طلبة ومنسوبي جامعة الإمام عبدالرحمن بن فيصل —
-    <strong>مهارات الحياة الجامعية</strong> &nbsp;·&nbsp;
-    <strong>التصميمات الهندسية</strong> &nbsp;·&nbsp;
-    <strong>مبادرات تطوعية</strong><br>
-    مبادرات حقيقية، أثر ملموس، وجيل يبني مستقبله بيديه. 🌱
-  </p>
-
-  <!-- Countdown -->
-  <div class="countdown-wrap">
-    <div class="countdown-label">العدّ التنازلي حتى انطلاق المعرض</div>
-    <div class="countdown-grid">
-      <div class="cd-card">
-        <span class="cd-num" id="cd-days">00</span>
-        <span class="cd-unit">أيام</span>
-      </div>
-      <span class="cd-sep">:</span>
-      <div class="cd-card">
-        <span class="cd-num" id="cd-hours">00</span>
-        <span class="cd-unit">ساعات</span>
-      </div>
-      <span class="cd-sep">:</span>
-      <div class="cd-card">
-        <span class="cd-num" id="cd-mins">00</span>
-        <span class="cd-unit">دقائق</span>
-      </div>
-      <span class="cd-sep">:</span>
-      <div class="cd-card">
-        <span class="cd-num" id="cd-secs">00</span>
-        <span class="cd-unit">ثواني</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ✅ FIX: Arabic only date badge — no English date that could show wrong -->
-  <div class="date-badge">
-    <span class="dot"></span>
-    الثلاثاء، ١٩ مايو ٢٠٢٦ · ١٢:٠٠ ظهراً
-  </div>
-
-</section>
-
-<!-- ══════════ EVENT LOGO ══════════ -->
-<section style="padding:70px 24px 60px; background: linear-gradient(160deg,#ffffff 0%,#f0f9ff 60%,#e8f8f5 100%); display:flex; flex-direction:column; align-items:center; gap:0;">
-  <div style="font-family:'Cairo','Tajawal',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.18em; color:#14b8a6; text-transform:uppercase; margin-bottom:18px;">شعار معرض تطوير الذات ٢٠٢٦</div>
-
-  <svg viewBox="0 0 300 300" style="width:min(340px,80vw); filter:drop-shadow(0 12px 32px rgba(30,58,138,0.18));">
-    <defs>
-      <linearGradient id="coreGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-        <stop offset="0%" style="stop-color:#B38F35;stop-opacity:1" />
-        <stop offset="50%" style="stop-color:#E6C27A;stop-opacity:1" />
-        <stop offset="100%" style="stop-color:#FDE68A;stop-opacity:1" />
-      </linearGradient>
-      <linearGradient id="orbitGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style="stop-color:#003058;stop-opacity:0.9" />
-        <stop offset="100%" style="stop-color:#005b9f;stop-opacity:0.3" />
-      </linearGradient>
-      <linearGradient id="orbitGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" style="stop-color:#10B981;stop-opacity:0.9" />
-        <stop offset="100%" style="stop-color:#047857;stop-opacity:0.3" />
-      </linearGradient>
-      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-        <feGaussianBlur stdDeviation="3" result="blur" />
-        <feComposite in="SourceGraphic" in2="blur" operator="over" />
-      </filter>
-    </defs>
-    <g style="animation:spin 30s linear infinite; transform-origin:150px 150px;">
-      <ellipse cx="150" cy="150" rx="110" ry="40" fill="none" stroke="url(#orbitGrad1)" stroke-width="2.5" transform="rotate(0 150 150)" opacity="0.7"/>
-      <ellipse cx="150" cy="150" rx="110" ry="40" fill="none" stroke="url(#orbitGrad1)" stroke-width="2.5" transform="rotate(36 150 150)" opacity="0.7"/>
-      <ellipse cx="150" cy="150" rx="110" ry="40" fill="none" stroke="url(#orbitGrad1)" stroke-width="2.5" transform="rotate(72 150 150)" opacity="0.7"/>
-      <ellipse cx="150" cy="150" rx="110" ry="40" fill="none" stroke="url(#orbitGrad2)" stroke-width="2.5" transform="rotate(108 150 150)" opacity="0.7"/>
-      <ellipse cx="150" cy="150" rx="110" ry="40" fill="none" stroke="url(#orbitGrad2)" stroke-width="2.5" transform="rotate(144 150 150)" opacity="0.7"/>
-      <circle cx="260" cy="150" r="7" fill="#B38F35"/>
-      <circle cx="40" cy="150" r="6" fill="#003058"/>
-      <circle cx="239" cy="85" r="5" fill="#3B82F6"/>
-      <circle cx="61" cy="215" r="7" fill="#10B981"/>
-      <circle cx="184" cy="45" r="6" fill="#8B5CF6"/>
-      <circle cx="116" cy="255" r="6" fill="#EC4899"/>
-      <circle cx="116" cy="45" r="7" fill="#0D9488"/>
-      <circle cx="184" cy="255" r="8" fill="#EF4444" filter="url(#glow)"/>
-      <circle cx="61" cy="85" r="6" fill="#F59E0B"/>
-      <circle cx="239" cy="215" r="5" fill="#64748B"/>
-      <circle cx="150" cy="40" r="7" fill="#E6C27A"/>
-      <polygon points="260,150 239,85 184,45 116,45 61,85 40,150 61,215 116,255 184,255 239,215" fill="none" stroke="#003058" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.4"/>
-    </g>
-    <g transform="translate(150, 150)">
-      <path d="M 0 -50 L 35 0 L 0 50 L -35 0 Z" fill="none" stroke="#003058" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M 0 -40 L 25 0 L 0 40 L -25 0 Z" fill="#003058" opacity="0.1"/>
-      <path d="M -10 15 C -10 0, 10 -10, 0 -25 C 15 -10, 10 10, -5 20" fill="url(#coreGrad)" stroke="#B38F35" stroke-width="2"/>
-      <circle cx="8" cy="-28" r="4" fill="#B38F35"/>
-    </g>
-  </svg>
-
-  <div style="margin-top:22px; text-align:center; font-family:'Cairo','Tajawal',sans-serif;">
-    <div style="font-size:20px; font-weight:900; color:#1e3a8a; margin-bottom:6px;">معرض قسم تطوير الذات</div>
-    <div style="font-size:13px; color:#94a3b8; font-weight:500; letter-spacing:0.05em;">جامعة الإمام عبدالرحمن بن فيصل · ٢٠٢٦</div>
-  </div>
-</section>
-
-<style>
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-</style>
-
-<div class="divider-line"></div>
-
-<!-- ══════════ EVENT DETAILS ══════════ -->
-<section class="section details-bg">
-  <div class="section-inner">
-    <div class="section-tag">✦ &nbsp;تفاصيل الفعالية</div>
-    <h2 class="section-title">موعدنا يوم الثلاثاء!</h2>
-    <p class="section-desc">
-      معرض قسم تطوير الذات يُسلّط الضوء على إنجازات طلاب جامعة الإمام في أبرز مجالات النمو الأكاديمي والشخصي والمجتمعي. تعالَ واكتشف، وتفاعل، وكن جزءاً من التجربة.
-    </p>
-    <div class="details-grid">
-      <div class="info-card">
-        <div class="info-icon">📅</div>
-        <div>
-          <div class="info-label">التاريخ</div>
-          <div class="info-value">الثلاثاء، ١٩ مايو ٢٠٢٦</div>
-          <div class="info-sub">٢١ ذو القعدة ١٤٤٧هـ</div>
+        <!-- ✅ الشعار - غيّر اسم الملف هنا لو مختلف -->
+        <div class="logo-container animate delay-1">
+            <img src="IAU_Logo.png" alt="شعار معرض قسم تطوير الذات - جامعة الإمام عبدالرحمن بن فيصل">
         </div>
-      </div>
-      <div class="info-card">
-        <div class="info-icon">🕛</div>
-        <div>
-          <div class="info-label">الوقت</div>
-          <div class="info-value">١٢:٠٠ ظهراً</div>
-          <div class="info-sub">حتى انتهاء الفعاليات</div>
+
+        <p class="hero-location animate delay-2">١٩ مايو ٢٠٢٦ · الدمام، المملكة العربية السعودية</p>
+
+        <h1 class="hero-title animate delay-2">معرض قسم تطوير الذات</h1>
+
+        <p class="hero-tagline animate delay-3">هل أنت مستعد؟ 🎯</p>
+
+        <p class="hero-description animate delay-3">
+            ستشهد إبداع طلبة ومنسوبي جامعة الإمام عبدالرحمن بن فيصل
+        </p>
+
+        <p class="hero-keywords animate delay-4">
+            <span><strong>مهارات الحياة الجامعية</strong></span>
+            <span class="keyword-dot">·</span>
+            <span><strong>التصميمات الهندسية</strong></span>
+            <span class="keyword-dot">·</span>
+            <span><strong>مبادرات تطوعية</strong></span>
+        </p>
+
+    </section>
+
+
+    <!-- ===================== Info Section ===================== -->
+    <section class="info-section">
+
+        <h2 class="section-title">تفاصيل الفعالية</h2>
+
+        <div class="info-grid">
+
+            <!-- ✅ بطاقة التاريخ مع أيقونة التقويم المصححة -->
+            <div class="info-card">
+                <p class="info-card-label">التاريخ</p>
+                <div class="info-card-icon">
+                    <div class="calendar-icon">
+                        <div class="cal-month">MAY</div>
+                        <div class="cal-day">19</div>
+                    </div>
+                </div>
+                <p class="info-card-main">الثلاثاء, ١٩ مايو ٢٠٢٦</p>
+                <p class="info-card-sub">٢١ ذو القعدة ١٤٤٧هـ</p>
+            </div>
+
+            <!-- بطاقة الموقع -->
+            <div class="info-card">
+                <p class="info-card-label">الموقع</p>
+                <div class="info-card-icon">
+                    <div class="location-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="#0a6d70"/>
+                        </svg>
+                    </div>
+                </div>
+                <p class="info-card-main">الدمام</p>
+                <p class="info-card-sub">المملكة العربية السعودية</p>
+            </div>
+
         </div>
-      </div>
-      <a href="https://maps.app.goo.gl/qetc8dPKERBZZCKC8?g_st=ic" target="_blank" rel="noopener noreferrer" class="info-card info-card-link">
-        <div class="info-icon">📍</div>
-        <div>
-          <div class="info-label">الموقع</div>
-          <div class="info-value">جامعة الإمام عبدالرحمن بن فيصل</div>
-          <div class="info-sub">عمادة السنة التحضيرية · مبنى D24</div>
-          <div class="info-sub" style="color:var(--teal);font-weight:600;margin-top:6px;">🗺 افتح في خرائط جوجل ←</div>
+    </section>
+
+
+    <!-- ===================== Topics Section ===================== -->
+    <section class="topics-section">
+
+        <h2 class="section-title">محاور المعرض</h2>
+
+        <div class="topics-grid">
+
+            <div class="topic-card">
+                <div class="topic-icon">🎓</div>
+                <h3 class="topic-title">مهارات الحياة الجامعية</h3>
+                <p class="topic-desc">تطوير المهارات الأكاديمية والشخصية للطلاب والطالبات</p>
+            </div>
+
+            <div class="topic-card">
+                <div class="topic-icon">📐</div>
+                <h3 class="topic-title">التصميمات الهندسية</h3>
+                <p class="topic-desc">عرض إبداعات ومشاريع التصميم الهندسي المتميزة</p>
+            </div>
+
+            <div class="topic-card">
+                <div class="topic-icon">🤝</div>
+                <h3 class="topic-title">مبادرات تطوعية</h3>
+                <p class="topic-desc">مبادرات مجتمعية وتطوعية لخدمة المجتمع</p>
+            </div>
+
         </div>
-      </a>
-      <div class="info-card">
-        <div class="info-icon">🎯</div>
-        <div>
-          <div class="info-label">الفئة المستهدفة</div>
-          <div class="info-value">طلاب وأعضاء هيئة التدريس</div>
-          <div class="info-sub">مفتوح لجميع منسوبي الجامعة</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<div class="divider-line"></div>
 
-<!-- ══════════ PAVILIONS ══════════ -->
-<section class="section">
-  <div class="section-inner">
-    <div class="section-tag">🏛 &nbsp;أركان المعرض</div>
-    <h2 class="section-title">اكتشف إنجازات قسم تطوير الذات</h2>
-    <p class="section-desc">
-      أحد عشر ركناً متنوعاً تعكس روح الإبداع والمسؤولية لدى طلاب الجامعة — من القاعة إلى المجتمع.
-    </p>
+    <!-- ===================== CTA Section ===================== -->
+    <section class="cta-section">
+        <h2 class="cta-title">لا تفوّت الفرصة! 🚀</h2>
+        <p class="cta-subtitle">انضم إلينا في معرض قسم تطوير الذات</p>
+        <a href="#" class="cta-btn">سجّل الآن</a>
+    </section>
 
-    <div class="pavilions-grid">
-      <div class="pavilion-card featured">
-        <div class="pv-icon">🌟</div>
-        <div class="pv-title">منسوبي القسم · تميز بلا حدود</div>
-        <div class="pv-desc">ركن خاص يُسلّط الضوء على إنجازات ومسيرة منسوبي قسم تطوير الذات — عطاء لا يتوقف وتميّز يُلهم الأجيال.</div>
-      </div>
 
-      <div class="pavilion-card" style="border-color:rgba(0,48,88,0.25);">
-        <div class="pv-icon" style="background:linear-gradient(135deg,rgba(0,48,88,0.12),rgba(0,91,159,0.15));">🔬</div>
-        <div class="pv-title" style="color:#003058;">البحث العلمي</div>
-        <div class="pv-desc">مشاريع بحثية أعدها الطلاب تُسهم في حل مشكلات حقيقية وتُثري المعرفة الأكاديمية.</div>
-      </div>
-      <div class="pavilion-card" style="border-color:rgba(59,130,246,0.25);">
-        <div class="pv-icon" style="background:linear-gradient(135deg,rgba(59,130,246,0.12),rgba(59,130,246,0.18));">🎓</div>
-        <div class="pv-title" style="color:#1d4ed8;">مهارات الحياة الجامعية</div>
-        <div class="pv-desc">عرض لأبرز مخرجات مقرر "مهارات الحياة الجامعية" الذي يُجهّز الطالب لرحلته الأكاديمية والمهنية.</div>
-      </div>
-      <div class="pavilion-card" style="border-color:rgba(16,185,129,0.25);">
-        <div class="pv-icon" style="background:linear-gradient(135deg,rgba(16,185,129,0.12),rgba(4,120,87,0.15));">🤝</div>
-        <div class="pv-title" style="color:#047857;">المشروعات التطوعية</div>
-        <div class="pv-desc">مبادرات تطوعية نفّذها طلاب الجامعة خدمةً للمجتمع المحلي بروح الإنسانية والعطاء.</div>
-      </div>
-      <div class="pavilion-card" style="border-color:rgba(139,92,246,0.25);">
-        <div class="pv-icon" style="background:linear-gradient(135deg,rgba(139,92,246,0.12),rgba(109,40,217,0.15));">✏️</div>
-        <div class="pv-title" style="color:#6d28d9;">المرسم والرسم الهندسي</div>
-        <div class="pv-desc">معرض أعمال إبداعية وهندسية تُبرز الموهبة التصميمية والدقة الفنية لدى الطلاب.</div>
-      </div>
-      <div class="pavilion-card" style="border-color:rgba(236,72,153,0.25);">
-        <div class="pv-icon" style="background:linear-gradient(135deg,rgba(236,72,153,0.12),rgba(190,24,93,0.15));">🎨</div>
-        <div class="pv-title" style="color:#be185d;">مقررات التصاميم</div>
-        <div class="pv-desc">نماذج تصميمية متنوعة تجمع بين الجماليات والوظيفية، نتاج مقررات التصميم المتخصصة.</div>
-      </div>
-      <div class="pavilion-card" style="border-color:rgba(13,148,136,0.25);">
-        <div class="pv-icon" style="background:linear-gradient(135deg,rgba(13,148,136,0.12),rgba(15,118,110,0.15));">🌍</div>
-        <div class="pv-title" style="color:#0d9488;">المسؤولية المجتمعية</div>
-        <div class="pv-desc">برامج ومشاريع تُجسّد دور الجامعة في خدمة المجتمع وتحقيق التنمية المستدامة.</div>
-      </div>
-      <div class="pavilion-card" style="border-color:rgba(239,68,68,0.25);">
-        <div class="pv-icon" style="background:linear-gradient(135deg,rgba(239,68,68,0.12),rgba(185,28,28,0.15));">🩸</div>
-        <div class="pv-title" style="color:#b91c1c;">التبرع بالدم</div>
-        <div class="pv-desc">حملة توعوية تُشجّع على التبرع بالدم وإنقاذ الأرواح — قطرة دم قد تُغيّر حياة إنسان.</div>
-      </div>
-      <div class="pavilion-card" style="border-color:rgba(245,158,11,0.25);">
-        <div class="pv-icon" style="background:linear-gradient(135deg,rgba(245,158,11,0.12),rgba(180,83,9,0.15));">🚦</div>
-        <div class="pv-title" style="color:#b45309;">السلامة المرورية</div>
-        <div class="pv-desc">توعية بقواعد السلامة على الطريق والحد من حوادث السير من خلال مبادرات طلابية مبتكرة.</div>
-      </div>
-      <div class="pavilion-card" style="border-color:rgba(100,116,139,0.25);">
-        <div class="pv-icon" style="background:linear-gradient(135deg,rgba(100,116,139,0.12),rgba(71,85,105,0.15));">🚭</div>
-        <div class="pv-title" style="color:#475569;">التوعية بأضرار التدخين والمخدرات</div>
-        <div class="pv-desc">ركن تثقيفي يُسلّط الضوء على مخاطر التدخين والمخدرات بأساليب تفاعلية وتوعوية.</div>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- ===================== Footer ===================== -->
+    <footer class="footer">
+        <p>© ٢٠٢٦ معرض قسم تطوير الذات - جامعة الإمام عبدالرحمن بن فيصل | صُنع بـ <span class="heart">❤</span></p>
+    </footer>
 
-<div class="divider-line"></div>
-
-<!-- ══════════ CLOSING BANNER ══════════ -->
-<div class="closing-banner">
-  <p class="closing-text">
-    <span class="highlight">حضوركم يميّزنا</span>
-  </p>
-</div>
-
-<div class="divider-line"></div>
-
-<!-- ══════════ FOOTER ══════════ -->
-<footer>
-  <div class="footer-divider"></div>
-  <strong>معرض قسم تطوير الذات — جامعة الإمام عبدالرحمن بن فيصل</strong><br>
-  عمادة السنة التحضيرية · مبنى D24 · الدمام، المملكة العربية السعودية<br>
-  الثلاثاء ١٩ مايو ٢٠٢٦ · الساعة ١٢:٠٠ ظهراً<br>
-  <span style="font-size:12px;opacity:0.5;margin-top:8px;display:block;">
-    © ١٤٤٧هـ / ٢٠٢٦م — جميع الحقوق محفوظة لجامعة الإمام عبدالرحمن بن فيصل
-  </span>
-</footer>
-
-<script>
-  // ✅ FIX: Target date set correctly to May 19, 2026 at 12:00 PM Saudi time (UTC+3)
-  const target = new Date('2026-05-19T12:00:00+03:00').getTime();
-
-  function pad(n) { return String(n).padStart(2, '0'); }
-
-  function tick() {
-    const diff = target - Date.now();
-    if (diff <= 0) {
-      ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => document.getElementById(id).textContent = '00');
-      return;
-    }
-    const days  = Math.floor(diff / 86400000);
-    const hours = Math.floor((diff % 86400000) / 3600000);
-    const mins  = Math.floor((diff % 3600000)  / 60000);
-    const secs  = Math.floor((diff % 60000)    / 1000);
-
-    const prevSecs = document.getElementById('cd-secs').textContent;
-    document.getElementById('cd-days').textContent  = pad(days);
-    document.getElementById('cd-hours').textContent = pad(hours);
-    document.getElementById('cd-mins').textContent  = pad(mins);
-    document.getElementById('cd-secs').textContent  = pad(secs);
-
-    if (prevSecs !== pad(secs)) {
-      const el = document.getElementById('cd-secs');
-      el.style.transform = 'scale(1.12)';
-      el.style.transition = 'transform 0.15s ease';
-      setTimeout(() => { el.style.transform = 'scale(1)'; }, 150);
-    }
-  }
-  tick();
-  setInterval(tick, 1000);
-</script>
 </body>
 </html>
