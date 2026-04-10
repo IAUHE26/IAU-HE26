@@ -138,7 +138,7 @@
   .date-badge .dot { width: 8px; height: 8px; background: var(--teal); border-radius: 50%; animation: pulse 1.5s ease-in-out infinite; }
   @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(1.3)} }
 
-  /* ── ABOUT ── */
+  /* ── SECTIONS ── */
   .section { padding: 90px 24px; }
   .section-inner { max-width: 1100px; margin: 0 auto; }
   .section-tag {
@@ -172,7 +172,7 @@
   .info-value { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--navy); line-height: 1.4; }
   .info-sub { font-size: 13px; color: var(--gray-300); margin-top: 4px; font-weight: 400; }
 
-  /* ── GALLERY — Pavilions ── */
+  /* ── PAVILIONS ── */
   .pavilions-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -197,6 +197,24 @@
   }
   .pavilion-card:hover::before { transform: scaleX(1); }
   .pavilion-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(30,58,138,0.13); border-color: rgba(20,184,166,0.3); }
+
+  /* ── FEATURED PAVILION (first card) ── */
+  .pavilion-card.featured {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    border-color: transparent;
+    box-shadow: 0 8px 32px rgba(30,58,138,0.28);
+  }
+  .pavilion-card.featured::before {
+    background: linear-gradient(90deg, var(--teal), var(--cyan));
+    transform: scaleX(1);
+  }
+  .pavilion-card.featured .pv-icon {
+    background: rgba(255,255,255,0.15);
+  }
+  .pavilion-card.featured .pv-title { color: white; font-size: 17px; }
+  .pavilion-card.featured .pv-desc { color: rgba(255,255,255,0.8); }
+  .pavilion-card.featured:hover { transform: translateY(-6px); box-shadow: 0 18px 48px rgba(30,58,138,0.38); }
+
   .pv-icon {
     width: 52px; height: 52px;
     border-radius: 14px;
@@ -206,6 +224,36 @@
   }
   .pv-title { font-family: var(--font-display); font-size: 16px; font-weight: 800; color: var(--navy); line-height: 1.4; }
   .pv-desc { font-size: 13px; color: var(--gray-600); line-height: 1.8; font-weight: 400; }
+
+  /* ── CLOSING BANNER ── */
+  .closing-banner {
+    padding: 80px 24px;
+    background: linear-gradient(160deg, #f0f9ff 0%, #e0f7fa 100%);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .closing-banner::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(20,184,166,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .closing-text {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 7vw, 72px);
+    font-weight: 900;
+    color: var(--navy);
+    text-align: center;
+    line-height: 1.2;
+    position: relative;
+    letter-spacing: -0.01em;
+  }
+  .closing-text .highlight {
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+  }
 
   /* ── FOOTER ── */
   footer {
@@ -237,11 +285,13 @@
     .cd-card { min-width: 70px; max-width: 80px; padding: 16px 8px 12px; }
     .cd-sep { display: none; }
     .countdown-grid { gap: 8px; }
+    .closing-text { font-size: clamp(28px, 8vw, 48px); }
   }
 </style>
 </head>
 <body>
 
+<!-- ══════════ HERO ══════════ -->
 <section class="hero">
   <span class="deco-cross">✚</span>
   <span class="deco-cross">✚</span>
@@ -250,18 +300,34 @@
 
   <div class="logo-wrap">
     <div class="logo-badge">
-      <img class="logo-img" src="IAU_Logo.2.jpg" alt="شعار جامعة الإمام عبدالرحمن بن فيصل">
+      <img class="logo-img" src="IAU_Logo.2.jpg" alt="شعار جامعة الإمام عبدالرحمن بن فيصل"
+           onerror="this.style.display='none';document.getElementById('fallback-logo').style.display='flex'">
+      <div id="fallback-logo" style="display:none;flex-direction:column;align-items:center;gap:8px;">
+        <div style="width:90px;height:90px;background:linear-gradient(135deg,#1e3a8a,#2d55c7);border-radius:22px;display:flex;align-items:center;justify-content:center;">
+          <svg viewBox="0 0 54 54" fill="none" width="54" height="54">
+            <rect x="23" y="14" width="8" height="26" rx="3" fill="white" opacity="0.9"/>
+            <rect x="14" y="23" width="26" height="8" rx="3" fill="white" opacity="0.9"/>
+          </svg>
+        </div>
+        <div style="font-family:'Cairo',sans-serif;font-weight:700;font-size:14px;color:#1e3a8a;text-align:center;">جامعة الإمام عبدالرحمن بن فيصل</div>
+      </div>
     </div>
   </div>
 
   <p class="hero-eyebrow">١٩ مايو ٢٠٢٦ · الدمام، المملكة العربية السعودية</p>
   <h1 class="hero-title">معرض قسم <span class="accent">تطوير الذات</span></h1>
 
+  <!-- ✅ UPDATED teaser text -->
   <p class="hero-sub">
     هل أنت مستعد؟ 🎯<br>
-    في <strong>يوم واحد</strong> ستشهد إبداع طلاب جامعة الإمام عبدالرحمن بن فيصل — من <strong>البحث العلمي</strong> إلى <strong>مهارات الحياة</strong>، من <strong>الرسم الهندسي</strong> إلى <strong>المسؤولية المجتمعية</strong>. مبادرات حقيقية، أثر ملموس، وجيل يبني مستقبله بيديه. 🌱
+    ستشهد إبداع طلبة ومنسوبي جامعة الإمام عبدالرحمن بن فيصل —
+    <strong>مهارات الحياة الجامعية</strong> &nbsp;·&nbsp;
+    <strong>التصميمات الهندسية</strong> &nbsp;·&nbsp;
+    <strong>مبادرات تطوعية</strong><br>
+    مبادرات حقيقية، أثر ملموس، وجيل يبني مستقبله بيديه. 🌱
   </p>
 
+  <!-- Countdown -->
   <div class="countdown-wrap">
     <div class="countdown-label">العدّ التنازلي حتى انطلاق المعرض</div>
     <div class="countdown-grid">
@@ -295,6 +361,7 @@
 
 <div class="divider-line"></div>
 
+<!-- ══════════ EVENT DETAILS ══════════ -->
 <section class="section details-bg">
   <div class="section-inner">
     <div class="section-tag">✦ &nbsp;تفاصيل الفعالية</div>
@@ -319,11 +386,13 @@
           <div class="info-sub">حتى انتهاء الفعاليات</div>
         </div>
       </div>
+      <!-- ✅ UPDATED location with building info -->
       <div class="info-card">
         <div class="info-icon">📍</div>
         <div>
           <div class="info-label">الموقع</div>
           <div class="info-value">جامعة الإمام عبدالرحمن بن فيصل</div>
+          <div class="info-sub">عمادة السنة التحضيرية · مبنى D24</div>
           <div class="info-sub">الدمام، المملكة العربية السعودية</div>
         </div>
       </div>
@@ -341,6 +410,7 @@
 
 <div class="divider-line"></div>
 
+<!-- ══════════ PAVILIONS ══════════ -->
 <section class="section">
   <div class="section-inner">
     <div class="section-tag">🏛 &nbsp;أركان المعرض</div>
@@ -350,6 +420,14 @@
     </p>
 
     <div class="pavilions-grid">
+
+      <!-- ✅ NEW FEATURED PAVILION — first from top right -->
+      <div class="pavilion-card featured">
+        <div class="pv-icon">🌟</div>
+        <div class="pv-title">منسوبو القسم · تميّز بلا حدود</div>
+        <div class="pv-desc">ركن خاص يُسلّط الضوء على إنجازات ومسيرة منسوبي قسم تطوير الذات — عطاء لا يتوقف وتميّز يُلهم الأجيال.</div>
+      </div>
+
       <div class="pavilion-card">
         <div class="pv-icon">🔬</div>
         <div class="pv-title">البحث العلمي</div>
@@ -401,21 +479,29 @@
 
 <div class="divider-line"></div>
 
+<!-- ══════════ CLOSING BANNER ══════════ -->
+<div class="closing-banner">
+  <p class="closing-text">
+    <span class="highlight">حضوركم يميّزنا</span>
+  </p>
+</div>
+
+<div class="divider-line"></div>
+
+<!-- ══════════ FOOTER ══════════ -->
 <footer>
   <div class="footer-divider"></div>
   <strong>معرض قسم تطوير الذات — جامعة الإمام عبدالرحمن بن فيصل</strong><br>
-  الدمام، المملكة العربية السعودية · الثلاثاء ١٩ مايو ٢٠٢٦<br>
+  عمادة السنة التحضيرية · مبنى D24 · الدمام، المملكة العربية السعودية<br>
+  الثلاثاء ١٩ مايو ٢٠٢٦ · الساعة ١٢:٠٠ ظهراً<br>
   <span style="font-size:12px;opacity:0.5;margin-top:8px;display:block;">
     © ١٤٤٧هـ / ٢٠٢٦م — جميع الحقوق محفوظة لجامعة الإمام عبدالرحمن بن فيصل
   </span>
 </footer>
 
 <script>
-  // Countdown to Tuesday May 19, 2026 at 12:00 PM AST (UTC+3)
   const target = new Date('2026-05-19T12:00:00+03:00').getTime();
-
   function pad(n) { return String(n).padStart(2, '0'); }
-
   function tick() {
     const diff = target - Date.now();
     if (diff <= 0) {
@@ -443,3 +529,4 @@
 </script>
 </body>
 </html>
+
