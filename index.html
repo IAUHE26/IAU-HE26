@@ -356,7 +356,71 @@
     <span class="dot"></span>
     الثلاثاء، ١٩ مايو ٢٠٢٦ · الساعة ١٢:٠٠ ظهراً
   </div>
+
+<!-- ══════════ EVENT LOGO ══════════ -->
+<section style="padding:70px 24px 60px; background: linear-gradient(160deg,#ffffff 0%,#f0f9ff 60%,#e8f8f5 100%); display:flex; flex-direction:column; align-items:center; gap:0;">
+  <div style="font-family:'Cairo','Tajawal',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.18em; color:#14b8a6; text-transform:uppercase; margin-bottom:18px;">شعار معرض تطوير الذات ٢٠٢٦</div>
+
+  <svg viewBox="0 0 300 300" style="width:min(340px,80vw); filter:drop-shadow(0 12px 32px rgba(30,58,138,0.18));">
+    <defs>
+      <linearGradient id="coreGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#B38F35;stop-opacity:1" />
+        <stop offset="50%" style="stop-color:#E6C27A;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#FDE68A;stop-opacity:1" />
+      </linearGradient>
+      <linearGradient id="orbitGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#003058;stop-opacity:0.9" />
+        <stop offset="100%" style="stop-color:#005b9f;stop-opacity:0.3" />
+      </linearGradient>
+      <linearGradient id="orbitGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#10B981;stop-opacity:0.9" />
+        <stop offset="100%" style="stop-color:#047857;stop-opacity:0.3" />
+      </linearGradient>
+      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="3" result="blur" />
+        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+      </filter>
+    </defs>
+    <g style="animation:spin 30s linear infinite; transform-origin:150px 150px;">
+      <ellipse cx="150" cy="150" rx="110" ry="40" fill="none" stroke="url(#orbitGrad1)" stroke-width="2.5" transform="rotate(0 150 150)" opacity="0.7"/>
+      <ellipse cx="150" cy="150" rx="110" ry="40" fill="none" stroke="url(#orbitGrad1)" stroke-width="2.5" transform="rotate(36 150 150)" opacity="0.7"/>
+      <ellipse cx="150" cy="150" rx="110" ry="40" fill="none" stroke="url(#orbitGrad1)" stroke-width="2.5" transform="rotate(72 150 150)" opacity="0.7"/>
+      <ellipse cx="150" cy="150" rx="110" ry="40" fill="none" stroke="url(#orbitGrad2)" stroke-width="2.5" transform="rotate(108 150 150)" opacity="0.7"/>
+      <ellipse cx="150" cy="150" rx="110" ry="40" fill="none" stroke="url(#orbitGrad2)" stroke-width="2.5" transform="rotate(144 150 150)" opacity="0.7"/>
+      <!-- 11 Nodes matching pavilion colors -->
+      <circle cx="260" cy="150" r="7" fill="#B38F35"/>
+      <circle cx="40" cy="150" r="6" fill="#003058"/>
+      <circle cx="239" cy="85" r="5" fill="#3B82F6"/>
+      <circle cx="61" cy="215" r="7" fill="#10B981"/>
+      <circle cx="184" cy="45" r="6" fill="#8B5CF6"/>
+      <circle cx="116" cy="255" r="6" fill="#EC4899"/>
+      <circle cx="116" cy="45" r="7" fill="#0D9488"/>
+      <circle cx="184" cy="255" r="8" fill="#EF4444" filter="url(#glow)"/>
+      <circle cx="61" cy="85" r="6" fill="#F59E0B"/>
+      <circle cx="239" cy="215" r="5" fill="#64748B"/>
+      <circle cx="150" cy="40" r="7" fill="#E6C27A"/>
+      <polygon points="260,150 239,85 184,45 116,45 61,85 40,150 61,215 116,255 184,255 239,215" fill="none" stroke="#003058" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.4"/>
+    </g>
+    <g transform="translate(150, 150)">
+      <path d="M 0 -50 L 35 0 L 0 50 L -35 0 Z" fill="none" stroke="#003058" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M 0 -40 L 25 0 L 0 40 L -25 0 Z" fill="#003058" opacity="0.1"/>
+      <path d="M -10 15 C -10 0, 10 -10, 0 -25 C 15 -10, 10 10, -5 20" fill="url(#coreGrad)" stroke="#B38F35" stroke-width="2"/>
+      <circle cx="8" cy="-28" r="4" fill="#B38F35"/>
+    </g>
+  </svg>
+
+  <div style="margin-top:22px; text-align:center; font-family:'Cairo','Tajawal',sans-serif;">
+    <div style="font-size:20px; font-weight:900; color:#1e3a8a; margin-bottom:6px;">معرض قسم تطوير الذات</div>
+    <div style="font-size:13px; color:#94a3b8; font-weight:500; letter-spacing:0.05em;">جامعة الإمام عبدالرحمن بن فيصل · ٢٠٢٦</div>
+  </div>
 </section>
+
+<style>
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+</style>
 
 <div class="divider-line"></div>
 
@@ -427,49 +491,49 @@
         <div class="pv-desc">ركن خاص يُسلّط الضوء على إنجازات ومسيرة منسوبي قسم تطوير الذات — عطاء لا يتوقف وتميّز يُلهم الأجيال.</div>
       </div>
 
-      <div class="pavilion-card">
-        <div class="pv-icon">🔬</div>
-        <div class="pv-title">البحث العلمي</div>
+      <div class="pavilion-card" style="border-color:rgba(0,48,88,0.25);">
+        <div class="pv-icon" style="background:linear-gradient(135deg,rgba(0,48,88,0.12),rgba(0,91,159,0.15));">🔬</div>
+        <div class="pv-title" style="color:#003058;">البحث العلمي</div>
         <div class="pv-desc">مشاريع بحثية أعدها الطلاب تُسهم في حل مشكلات حقيقية وتُثري المعرفة الأكاديمية.</div>
       </div>
-      <div class="pavilion-card">
-        <div class="pv-icon">🎓</div>
-        <div class="pv-title">مهارات الحياة الجامعية</div>
+      <div class="pavilion-card" style="border-color:rgba(59,130,246,0.25);">
+        <div class="pv-icon" style="background:linear-gradient(135deg,rgba(59,130,246,0.12),rgba(59,130,246,0.18));">🎓</div>
+        <div class="pv-title" style="color:#1d4ed8;">مهارات الحياة الجامعية</div>
         <div class="pv-desc">عرض لأبرز مخرجات مقرر "مهارات الحياة الجامعية" الذي يُجهّز الطالب لرحلته الأكاديمية والمهنية.</div>
       </div>
-      <div class="pavilion-card">
-        <div class="pv-icon">🤝</div>
-        <div class="pv-title">المشروعات التطوعية</div>
+      <div class="pavilion-card" style="border-color:rgba(16,185,129,0.25);">
+        <div class="pv-icon" style="background:linear-gradient(135deg,rgba(16,185,129,0.12),rgba(4,120,87,0.15));">🤝</div>
+        <div class="pv-title" style="color:#047857;">المشروعات التطوعية</div>
         <div class="pv-desc">مبادرات تطوعية نفّذها طلاب الجامعة خدمةً للمجتمع المحلي بروح الإنسانية والعطاء.</div>
       </div>
-      <div class="pavilion-card">
-        <div class="pv-icon">✏️</div>
-        <div class="pv-title">المرسم والرسم الهندسي</div>
+      <div class="pavilion-card" style="border-color:rgba(139,92,246,0.25);">
+        <div class="pv-icon" style="background:linear-gradient(135deg,rgba(139,92,246,0.12),rgba(109,40,217,0.15));">✏️</div>
+        <div class="pv-title" style="color:#6d28d9;">المرسم والرسم الهندسي</div>
         <div class="pv-desc">معرض أعمال إبداعية وهندسية تُبرز الموهبة التصميمية والدقة الفنية لدى الطلاب.</div>
       </div>
-      <div class="pavilion-card">
-        <div class="pv-icon">🎨</div>
-        <div class="pv-title">مقررات التصاميم</div>
+      <div class="pavilion-card" style="border-color:rgba(236,72,153,0.25);">
+        <div class="pv-icon" style="background:linear-gradient(135deg,rgba(236,72,153,0.12),rgba(190,24,93,0.15));">🎨</div>
+        <div class="pv-title" style="color:#be185d;">مقررات التصاميم</div>
         <div class="pv-desc">نماذج تصميمية متنوعة تجمع بين الجماليات والوظيفية، نتاج مقررات التصميم المتخصصة.</div>
       </div>
-      <div class="pavilion-card">
-        <div class="pv-icon">🌍</div>
-        <div class="pv-title">المسؤولية المجتمعية</div>
+      <div class="pavilion-card" style="border-color:rgba(13,148,136,0.25);">
+        <div class="pv-icon" style="background:linear-gradient(135deg,rgba(13,148,136,0.12),rgba(15,118,110,0.15));">🌍</div>
+        <div class="pv-title" style="color:#0d9488;">المسؤولية المجتمعية</div>
         <div class="pv-desc">برامج ومشاريع تُجسّد دور الجامعة في خدمة المجتمع وتحقيق التنمية المستدامة.</div>
       </div>
-      <div class="pavilion-card">
-        <div class="pv-icon">🩸</div>
-        <div class="pv-title">التبرع بالدم</div>
+      <div class="pavilion-card" style="border-color:rgba(239,68,68,0.25);">
+        <div class="pv-icon" style="background:linear-gradient(135deg,rgba(239,68,68,0.12),rgba(185,28,28,0.15));">🩸</div>
+        <div class="pv-title" style="color:#b91c1c;">التبرع بالدم</div>
         <div class="pv-desc">حملة توعوية تُشجّع على التبرع بالدم وإنقاذ الأرواح — قطرة دم قد تُغيّر حياة إنسان.</div>
       </div>
-      <div class="pavilion-card">
-        <div class="pv-icon">🚦</div>
-        <div class="pv-title">السلامة المرورية</div>
+      <div class="pavilion-card" style="border-color:rgba(245,158,11,0.25);">
+        <div class="pv-icon" style="background:linear-gradient(135deg,rgba(245,158,11,0.12),rgba(180,83,9,0.15));">🚦</div>
+        <div class="pv-title" style="color:#b45309;">السلامة المرورية</div>
         <div class="pv-desc">توعية بقواعد السلامة على الطريق والحد من حوادث السير من خلال مبادرات طلابية مبتكرة.</div>
       </div>
-      <div class="pavilion-card">
-        <div class="pv-icon">🚭</div>
-        <div class="pv-title">التوعية بأضرار التدخين والمخدرات</div>
+      <div class="pavilion-card" style="border-color:rgba(100,116,139,0.25);">
+        <div class="pv-icon" style="background:linear-gradient(135deg,rgba(100,116,139,0.12),rgba(71,85,105,0.15));">🚭</div>
+        <div class="pv-title" style="color:#475569;">التوعية بأضرار التدخين والمخدرات</div>
         <div class="pv-desc">ركن تثقيفي يُسلّط الضوء على مخاطر التدخين والمخدرات بأساليب تفاعلية وتوعوية.</div>
       </div>
     </div>
