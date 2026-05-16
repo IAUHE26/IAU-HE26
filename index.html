@@ -282,8 +282,18 @@
         #departments { background: var(--light); position: relative; }
         .departments-grid {
             max-width: 1200px; margin: 0 auto; display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;
+            grid-template-columns: repeat(3, 1fr); gap: 30px;
         }
+
+        /* Bottom row: 2 cards centered */
+        .departments-bottom-row {
+            max-width: 1200px; margin: 30px auto 0;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 400px));
+            gap: 30px;
+            justify-content: center;
+        }
+
         .dept-card {
             background: var(--white); border-radius: 20px; padding: 40px 30px;
             text-align: center; transition: all 0.4s ease;
@@ -448,6 +458,8 @@
             .hero-title { font-size: 2.5rem; }
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
             .footer-content { grid-template-columns: 1fr 1fr; }
+            .departments-grid { grid-template-columns: repeat(2, 1fr); }
+            .departments-bottom-row { grid-template-columns: 1fr; max-width: 500px; }
         }
         @media (max-width: 768px) {
             .navbar { padding: 0 20px; }
@@ -467,6 +479,7 @@
             .countdown-box .count-number { font-size: 2.2rem; }
             .countdown-separator { display: none; }
             .departments-grid { grid-template-columns: 1fr; }
+            .departments-bottom-row { grid-template-columns: 1fr; }
             .agencies-grid { grid-template-columns: 1fr; }
             .event-details { grid-template-columns: 1fr; }
             .footer-content { grid-template-columns: 1fr; gap: 30px; }
@@ -509,8 +522,8 @@
             <div class="particle" style="top:50%;left:90%;animation-delay:4s;"></div>
         </div>
         <div class="hero-content">
+            <!-- FIX 2: removed the star icon, university name only -->
             <div class="hero-badge">
-                <i class="fas fa-star"></i>
                 جامعة الإمام عبدالرحمن بن فيصل
             </div>
             <h1 class="hero-title">
@@ -529,7 +542,8 @@
                     <span>الساعة 12:00 ظهراً</span>
                 </div>
             </div>
-            <a href="#departments" class="hero-btn">
+            <!-- FIX 3: button now scrolls to #about -->
+            <a href="#about" class="hero-btn">
                 استكشف المعرض
                 <i class="fas fa-arrow-left"></i>
             </a>
@@ -568,9 +582,10 @@
                 </div>
             </div>
             <div class="countdown-date-badge">
-    <span class="dot"></span>
-    الاثنين، 15 يونيو 2026 · الساعة 12:00 ظهراً
-</div>
+                <span class="dot"></span>
+                الاثنين، 15 يونيو 2026 · الساعة 12:00 ظهراً
+            </div>
+        </div>
     </section>
 
     <!-- ABOUT -->
@@ -621,6 +636,8 @@
             <h2>الأقسام الأكاديمية</h2>
             <p>خمسة أقسام تمثّل ركائز التعليم في السنة التحضيرية</p>
         </div>
+
+        <!-- Top row: 3 cards -->
         <div class="departments-grid">
             <div class="dept-card self-dev reveal">
                 <div class="dept-icon icon-red"><i class="fas fa-user-graduate"></i></div>
@@ -640,17 +657,29 @@
                 <p>يُرسّخ القيم الإسلامية والمعرفة الشرعية لدى الطلاب ويُعزز الهوية الإسلامية في المسيرة الأكاديمية والحياتية.</p>
                 <span class="dept-tag">ثقافة إسلامية</span>
             </div>
-            <div class="dept-card english reveal">
-                <div class="dept-icon icon-orange"><i class="fas fa-language"></i></div>
-                <h3>قسم اللغة الإنجليزية</h3>
-                <p>يُطوّر المهارات اللغوية في الإنجليزية من استماع وتحدث وقراءة وكتابة لتمكين الطلاب من التفوق في تخصصاتهم.</p>
-                <span class="dept-tag">مهارات لغوية</span>
+        </div>
+
+        <!-- FIX 1: Bottom row: 2 cards centered with text layout (no icon) -->
+        <div class="departments-bottom-row">
+            <div class="dept-card english reveal" style="display:flex; align-items:center; gap:25px; text-align:right; padding: 35px 30px;">
+                <div style="flex-shrink:0;">
+                    <div class="dept-icon icon-orange" style="margin:0;"><i class="fas fa-language"></i></div>
+                </div>
+                <div style="flex:1;">
+                    <h3 style="margin-bottom:10px;">قسم اللغة الإنجليزية</h3>
+                    <p style="margin-bottom:12px;">يُطوّر المهارات اللغوية في الإنجليزية من استماع وتحدث وقراءة وكتابة لتمكين الطلاب من التفوق في تخصصاتهم.</p>
+                    <span class="dept-tag">مهارات لغوية</span>
+                </div>
             </div>
-            <div class="dept-card computer reveal">
-                <div class="dept-icon icon-purple"><i class="fas fa-laptop-code"></i></div>
-                <h3>قسم الحاسب الآلي</h3>
-                <p>يُكسب الطلاب المهارات التقنية والحاسوبية الأساسية ويُهيئهم للتعامل مع أدوات العصر الرقمي بكفاءة واحترافية.</p>
-                <span class="dept-tag">تقنية المعلومات</span>
+            <div class="dept-card computer reveal" style="display:flex; align-items:center; gap:25px; text-align:right; padding: 35px 30px;">
+                <div style="flex-shrink:0;">
+                    <div class="dept-icon icon-purple" style="margin:0;"><i class="fas fa-laptop-code"></i></div>
+                </div>
+                <div style="flex:1;">
+                    <h3 style="margin-bottom:10px;">قسم الحاسب الآلي</h3>
+                    <p style="margin-bottom:12px;">يُكسب الطلاب المهارات التقنية والحاسوبية الأساسية ويُهيئهم للتعامل مع أدوات العصر الرقمي بكفاءة واحترافية.</p>
+                    <span class="dept-tag">تقنية المعلومات</span>
+                </div>
             </div>
         </div>
     </section>
@@ -761,8 +790,6 @@
     <script>
         // ========== COUNTDOWN TIMER ==========
         function updateCountdown() {
-            // تاريخ الفعالية: 15/6/1447 هجري يوافق تقريباً 12 ديسمبر 2025 الساعة 12 ظهراً
-            // يمكنك تعديل هذا التاريخ الميلادي حسب التحويل الدقيق
             const eventDate = new Date('2026-06-15T12:00:00');
             const now = new Date();
             const diff = eventDate - now;
@@ -786,7 +813,6 @@
             document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
         }
 
-        // تحديث كل ثانية
         updateCountdown();
         setInterval(updateCountdown, 1000);
 
