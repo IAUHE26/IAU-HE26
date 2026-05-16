@@ -449,6 +449,31 @@
         }
         .footer-bottom p { color: rgba(255,255,255,0.4); font-size: 0.9rem; }
 
+        /* LOGO */
+        .nav-logo-svg { width: 38px; height: 38px; flex-shrink: 0; }
+        .hero-logo-wrap {
+            display: flex; justify-content: center; margin-bottom: 28px;
+            animation: fadeInDown 1s ease;
+        }
+        .hero-logo-svg { width: 260px; height: 260px; }
+
+        /* Logo animations */
+        @keyframes logo-spin-cw  { from{transform-origin:110px 110px;transform:rotate(0deg);}   to{transform-origin:110px 110px;transform:rotate(360deg);} }
+        @keyframes logo-spin-ccw { from{transform-origin:110px 110px;transform:rotate(0deg);}   to{transform-origin:110px 110px;transform:rotate(-360deg);} }
+        @keyframes logo-pulse    { 0%,100%{transform:scale(1);opacity:1;} 50%{transform:scale(1.12);opacity:.8;} }
+        @keyframes logo-float    { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-4px);} }
+        @keyframes logo-glow     { 0%,100%{opacity:.4;} 50%{opacity:.9;} }
+        .lgo-ro { animation: logo-spin-cw  18s linear infinite; }
+        .lgo-ri { animation: logo-spin-ccw 12s linear infinite; }
+        .lgo-bk { animation: logo-pulse 4s ease-in-out infinite .5s; }
+        .lgo-st { animation: logo-pulse 3s ease-in-out infinite; }
+        .lgo-d1 { animation: logo-float 2.2s ease-in-out infinite 0s; }
+        .lgo-d2 { animation: logo-float 2.2s ease-in-out infinite .3s; }
+        .lgo-d3 { animation: logo-float 2.2s ease-in-out infinite .6s; }
+        .lgo-d4 { animation: logo-float 2.2s ease-in-out infinite .9s; }
+        .lgo-d5 { animation: logo-float 2.2s ease-in-out infinite 1.2s; }
+        .lgo-gl { animation: logo-glow 3s ease-in-out infinite; }
+
         /* REVEAL */
         .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease; }
         .reveal.active { opacity: 1; transform: translateY(0); }
@@ -491,8 +516,48 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <i class="fas fa-university" style="color: var(--gold); font-size: 1.8rem;"></i>
-                <span>عمادة السنة التحضيرية</span>
+                <svg class="nav-logo-svg" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="nl-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0c2340"/><stop offset="100%" stop-color="#1a5276"/></linearGradient>
+                    <linearGradient id="nl-gd" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f0c75e"/><stop offset="100%" stop-color="#c0932e"/></linearGradient>
+                  </defs>
+                  <circle class="lgo-ro lgo-gl" cx="110" cy="110" r="104" fill="none" stroke="url(#nl-gd)" stroke-width="1.5" stroke-dasharray="8 5"/>
+                  <circle cx="110" cy="110" r="96" fill="url(#nl-bg)"/>
+                  <circle class="lgo-ri" cx="110" cy="110" r="88" fill="none" stroke="#1abc9c" stroke-width="0.8" stroke-dasharray="4 8" opacity="0.5"/>
+                  <g opacity="0.1" stroke="#f0c75e" stroke-width="1">
+                    <line x1="110" y1="110" x2="110" y2="14"/><line x1="110" y1="110" x2="192" y2="57"/>
+                    <line x1="110" y1="110" x2="192" y2="163"/><line x1="110" y1="110" x2="110" y2="206"/>
+                    <line x1="110" y1="110" x2="28" y2="163"/><line x1="110" y1="110" x2="28" y2="57"/>
+                    <line x1="110" y1="110" x2="183" y2="110"/><line x1="110" y1="110" x2="37" y2="110"/>
+                  </g>
+                  <g class="lgo-bk">
+                    <rect x="62" y="100" width="48" height="38" rx="3" fill="#1abc9c" opacity="0.95"/>
+                    <rect x="110" y="100" width="48" height="38" rx="3" fill="#16a085" opacity="0.95"/>
+                    <rect x="107" y="97" width="6" height="44" rx="3" fill="url(#nl-gd)"/>
+                    <line x1="70" y1="110" x2="105" y2="110" stroke="white" stroke-width="1.2" opacity="0.45"/>
+                    <line x1="70" y1="118" x2="105" y2="118" stroke="white" stroke-width="1.2" opacity="0.45"/>
+                    <line x1="115" y1="110" x2="150" y2="110" stroke="white" stroke-width="1.2" opacity="0.45"/>
+                    <line x1="115" y1="118" x2="150" y2="118" stroke="white" stroke-width="1.2" opacity="0.45"/>
+                    <path d="M62 138 Q86 146 110 138 Q134 146 158 138" fill="none" stroke="#c0932e" stroke-width="1.5" opacity="0.7"/>
+                    <polygon points="110,72 80,86 110,97 140,86" fill="url(#nl-gd)"/>
+                    <circle cx="110" cy="72" r="4" fill="#f0c75e"/>
+                    <line x1="140" y1="86" x2="146" y2="100" stroke="#f0c75e" stroke-width="1.5"/>
+                    <circle cx="146" cy="103" r="3" fill="#c0932e"/>
+                  </g>
+                  <g class="lgo-st">
+                    <polygon points="110,50 113.5,60 124,60 116,66 119,76 110,70 101,76 104,66 96,60 106.5,60" fill="url(#nl-gd)"/>
+                  </g>
+                  <g class="lgo-d1"><circle cx="68" cy="162" r="5.5" fill="#e74c3c"/></g>
+                  <g class="lgo-d2"><circle cx="88" cy="175" r="5.5" fill="#27ae60"/></g>
+                  <g class="lgo-d3"><circle cx="110" cy="180" r="5.5" fill="#2980b9"/></g>
+                  <g class="lgo-d4"><circle cx="132" cy="175" r="5.5" fill="#e67e22"/></g>
+                  <g class="lgo-d5"><circle cx="152" cy="162" r="5.5" fill="#8e44ad"/></g>
+                  <path d="M68 162 Q110 190 152 162" fill="none" stroke="#c0932e" stroke-width="1" opacity="0.45" stroke-dasharray="3 3"/>
+                  <circle cx="110" cy="14" r="2.5" fill="#f0c75e" opacity="0.8"/>
+                  <circle cx="192" cy="57" r="2" fill="#1abc9c" opacity="0.6"/>
+                  <circle cx="28" cy="57" r="2" fill="#c0932e" opacity="0.6"/>
+                </svg>
+                <span>المعرض السنوي</span>
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#hero" class="active">الرئيسية</a></li>
@@ -522,6 +587,55 @@
             <div class="particle" style="top:50%;left:90%;animation-delay:4s;"></div>
         </div>
         <div class="hero-content">
+            <!-- Hero Logo -->
+            <div class="hero-logo-wrap">
+                <svg class="hero-logo-svg" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="hl-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0c2340"/><stop offset="100%" stop-color="#1a5276"/></linearGradient>
+                    <linearGradient id="hl-gd" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f0c75e"/><stop offset="100%" stop-color="#c0932e"/></linearGradient>
+                  </defs>
+                  <circle class="lgo-ro lgo-gl" cx="110" cy="110" r="104" fill="none" stroke="url(#hl-gd)" stroke-width="1.5" stroke-dasharray="8 5"/>
+                  <circle cx="110" cy="110" r="96" fill="url(#hl-bg)"/>
+                  <circle class="lgo-ri" cx="110" cy="110" r="88" fill="none" stroke="#1abc9c" stroke-width="0.8" stroke-dasharray="4 8" opacity="0.5"/>
+                  <g opacity="0.1" stroke="#f0c75e" stroke-width="1">
+                    <line x1="110" y1="110" x2="110" y2="14"/><line x1="110" y1="110" x2="192" y2="57"/>
+                    <line x1="110" y1="110" x2="192" y2="163"/><line x1="110" y1="110" x2="110" y2="206"/>
+                    <line x1="110" y1="110" x2="28" y2="163"/><line x1="110" y1="110" x2="28" y2="57"/>
+                    <line x1="110" y1="110" x2="155" y2="26"/><line x1="110" y1="110" x2="65" y2="26"/>
+                    <line x1="110" y1="110" x2="183" y2="110"/><line x1="110" y1="110" x2="37" y2="110"/>
+                  </g>
+                  <g class="lgo-bk">
+                    <rect x="62" y="100" width="48" height="38" rx="3" fill="#1abc9c" opacity="0.95"/>
+                    <rect x="110" y="100" width="48" height="38" rx="3" fill="#16a085" opacity="0.95"/>
+                    <rect x="107" y="97" width="6" height="44" rx="3" fill="url(#hl-gd)"/>
+                    <line x1="70" y1="110" x2="105" y2="110" stroke="white" stroke-width="1.2" opacity="0.45"/>
+                    <line x1="70" y1="118" x2="105" y2="118" stroke="white" stroke-width="1.2" opacity="0.45"/>
+                    <line x1="70" y1="126" x2="100" y2="126" stroke="white" stroke-width="1.2" opacity="0.45"/>
+                    <line x1="115" y1="110" x2="150" y2="110" stroke="white" stroke-width="1.2" opacity="0.45"/>
+                    <line x1="115" y1="118" x2="150" y2="118" stroke="white" stroke-width="1.2" opacity="0.45"/>
+                    <line x1="115" y1="126" x2="143" y2="126" stroke="white" stroke-width="1.2" opacity="0.45"/>
+                    <path d="M62 138 Q86 146 110 138 Q134 146 158 138" fill="none" stroke="#c0932e" stroke-width="1.5" opacity="0.7"/>
+                    <polygon points="110,72 80,86 110,97 140,86" fill="url(#hl-gd)"/>
+                    <circle cx="110" cy="72" r="4" fill="#f0c75e"/>
+                    <line x1="140" y1="86" x2="146" y2="100" stroke="#f0c75e" stroke-width="1.5"/>
+                    <circle cx="146" cy="103" r="3" fill="#c0932e"/>
+                  </g>
+                  <g class="lgo-st">
+                    <polygon points="110,50 113.5,60 124,60 116,66 119,76 110,70 101,76 104,66 96,60 106.5,60" fill="url(#hl-gd)"/>
+                  </g>
+                  <g class="lgo-d1"><circle cx="68"  cy="162" r="5.5" fill="#e74c3c"/></g>
+                  <g class="lgo-d2"><circle cx="88"  cy="175" r="5.5" fill="#27ae60"/></g>
+                  <g class="lgo-d3"><circle cx="110" cy="180" r="5.5" fill="#2980b9"/></g>
+                  <g class="lgo-d4"><circle cx="132" cy="175" r="5.5" fill="#e67e22"/></g>
+                  <g class="lgo-d5"><circle cx="152" cy="162" r="5.5" fill="#8e44ad"/></g>
+                  <path d="M68 162 Q110 190 152 162" fill="none" stroke="#c0932e" stroke-width="1" opacity="0.45" stroke-dasharray="3 3"/>
+                  <circle cx="110" cy="14" r="2.5" fill="#f0c75e" opacity="0.8"/>
+                  <circle cx="192" cy="57"  r="2" fill="#1abc9c" opacity="0.6"/>
+                  <circle cx="192" cy="163" r="2" fill="#1abc9c" opacity="0.6"/>
+                  <circle cx="28"  cy="57"  r="2" fill="#c0932e" opacity="0.6"/>
+                  <circle cx="28"  cy="163" r="2" fill="#c0932e" opacity="0.6"/>
+                </svg>
+            </div>
             <!-- FIX 2: removed the star icon, university name only -->
             <div class="hero-badge">
                 جامعة الإمام عبدالرحمن بن فيصل
